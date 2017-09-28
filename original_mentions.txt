@@ -1,0 +1,200 @@
+bonds.l:	(get-temperature-adjusted-probability 
+breakers.l:; temperature.  Chooses a structure and random and decides probabilistically
+breakers.l:  ; Decide whether or not to fizzle as a function of temperature.
+breakers.l:  (setq fizzle-probability (/ (fake-reciprocal *temperature*) 100))
+breakers.l:	      (get-temperature-adjusted-probability 
+ccat-sys.l:	  "temperature-graphics"
+ccat-sys.l:	 %very-low-answer-temperature-threshold-distribution% 
+ccat-sys.l:	 %low-answer-temperature-threshold-distribution% 
+ccat-sys.l:	 %medium-answer-temperature-threshold-distribution% 
+ccat-sys.l:         %high-answer-temperature-threshold-distribution% 
+ccat-sys.l:         %very-high-answer-temperature-threshold-distribution% 
+ccat-sys.l:         *codelet-count* *temperature* *codelets-to-post* *found-answer*
+ccat-sys.l:	 *clamp-temperature* *snag-object*
+ccat-sys.l:	 %irrelevant-length-font% %temperature-font% %codelet-group-font%
+ccat-sys.l:         %temperature-display-width% 
+ccat-sys.l:         %temperature-display-height% 
+ccat-sys.l:         %temperature-number-x% *old-temperature-string* *old-temperature-y*
+ccat-sys.l:         %temperature-display-x1% 
+ccat-sys.l:         %temperature-display-y1% 
+ccat-sys.l:         %temperature-display-x2% 
+ccat-sys.l:         %temperature-display-y2% 
+ccat-sys.l:         *temperature-height* 
+ccat-sys.l:         %temperature-graphics%  *init-time-menu* 
+coderack.l:; and the temperature).
+coderack.l:  (aref %urgency-value-array% urgency-code *temperature*))
+coderack.l:		                  (if* (> *temperature* 25) 
+constants.l:  (setq %temperature-graphics% t) ; T means temperature is displayed.
+constants.l:  (setq %temperature-font% 
+constants.l:  ; bin as a function of temperature.
+constants.l:	(loop for temperature from 0 to 100 do
+constants.l:	      (aset %urgency-value-array% bin-number temperature 
+constants.l:			          (/ (+ (fake-reciprocal temperature) 10)
+constants.l:  ; Answer-temperature threshold distributions:
+constants.l:  ; or not to fizzle as a function of temperature.  The distribution 
+constants.l:  ; until the temperature is low.  If few bonds have been built (and,
+constants.l:  ; though the temperature is relatively high.
+constants.l:  (setq %very-low-answer-temperature-threshold-distribution% 
+constants.l:	(send %very-low-answer-temperature-threshold-distribution% :vset i 0))
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 10 5)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 20 150)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 30 5)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 40 2)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 50 1)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 60 1)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 70 1)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 80 1)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 90 1)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :vset 100 1)
+constants.l:  (send %very-low-answer-temperature-threshold-distribution% :update)
+constants.l:  (setq %low-answer-temperature-threshold-distribution% 
+constants.l:	(send %low-answer-temperature-threshold-distribution% :vset i 0))
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 10 2)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 20 5)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 30 150)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 40 5)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 50 2)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 60 1)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 70 1)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 80 1)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 90 1)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :vset 100 1)
+constants.l:  (send %low-answer-temperature-threshold-distribution% :update)	
+constants.l:  (setq %medium-answer-temperature-threshold-distribution% 
+constants.l:	(send %medium-answer-temperature-threshold-distribution% :vset i 0))
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 10 1)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 20 2)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 30 5)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 40 150)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 50 5)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 60 2)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 70 1)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 80 1)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 90 1)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :vset 100 1)
+constants.l:  (send %medium-answer-temperature-threshold-distribution% :update)	
+constants.l:  (setq %high-answer-temperature-threshold-distribution% 
+constants.l:	(send %high-answer-temperature-threshold-distribution% :vset i 0))
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 10 1)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 20 1)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 30 2)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 40 5)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 50 150)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 60 5)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 70 2)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 80 1)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 90 1)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :vset 100 1)
+constants.l:  (send %high-answer-temperature-threshold-distribution% :update)	
+constants.l:  (setq %very-high-answer-temperature-threshold-distribution% 
+constants.l:	(send %very-high-answer-temperature-threshold-distribution% :vset i 0))
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 10 1)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 20 1)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 30 1)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 40 2)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 50 5)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 60 150)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 70 5)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 80 2)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 90 1)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :vset 100 1)
+constants.l:  (send %very-high-answer-temperature-threshold-distribution% :update)
+copystat.l:			(send *answer-string* :pstring) *temperature* 
+copystat.l:                (format ostream2 "   Temperature: ~a~&" *temperature*)
+copystat.l:    (answer-string (frequency 0) (temperature-sum 0) (temperature-sqrs-sum 0)
+copystat.l:		     (overall-temperature-sum 0)
+copystat.l:		     (overall-temperature-sqrs-sum 0)
+copystat.l:	(send current-answer-summary :set-temperature-sum
+copystat.l:	      (+ (send current-answer-summary :temperature-sum) 
+copystat.l:        (send current-answer-summary :set-temperature-sqrs-sum
+copystat.l:              (+ (send current-answer-summary :temperature-sqrs-sum)
+copystat.l:	(incf overall-temperature-sum (nth 1 answer))
+copystat.l:        (incf overall-temperature-sqrs-sum (sqr (nth 1 answer)))
+copystat.l:	      (round (/ overall-temperature-sum (length answer-list))) 
+copystat.l:		    (/ (sqrt (/ (abs (- overall-temperature-sqrs-sum
+copystat.l:					(/ (sqr overall-temperature-sum)
+copystat.l:                          (round (/ (send a :temperature-sum)
+copystat.l:			 	 (/ (sqrt (/ (abs (- (send a :temperature-sqrs-sum)
+copystat.l:						     (/ (sqr (send a :temperature-sum))
+copystat.l:      (format verbose-ostream "Overall temperature average: ~5,2f~&"
+copystat.l:	      (round (/ overall-temperature-sum (length answer-list))))
+copystat.l:      (format verbose-ostream "Overall temperature average standard error: ~5,2f~&"
+copystat.l:		    (/ (sqrt (/ (abs (- overall-temperature-sqrs-sum
+copystat.l:					(/ (sqr overall-temperature-sum)
+copystat.l:	   (format verbose-ostream "Average temperature: ~a~&~%"	   
+copystat.l:	           (round (/ (send a :temperature-sum)
+copystat.l:	   (format verbose-ostream "Average temperature standard error: ~a~&~%"
+copystat.l:			  (/ (sqrt (/ (abs (- (send a :temperature-sqrs-sum)
+copystat.l:					      (/ (sqr (send a :temperature-sum))
+correspondences.l:	            (get-temperature-adjusted-probability 
+correspondences.l:	            (get-temperature-adjusted-probability 
+correspondences.l:  ; temperature.  
+correspondences.l:	(get-temperature-adjusted-probability 
+descriptions.l:	(get-temperature-adjusted-probability 
+formulas.l:(defun update-temperature (&aux rule-weakness)
+formulas.l:; Updates the temperature, which is a function of the average total-unhappiness
+formulas.l:  (if* (not *clamp-temperature*)
+formulas.l:        (setq *temperature* 
+formulas.l:(defun get-answer-temperature-threshold-distribution (&aux bond-density)
+formulas.l:; choose a temperature threshold, used by rule-translator codelets in deciding
+formulas.l:; distribution is slanted towards low temperatures.  The idea behind this
+formulas.l:;     the temperature will be low and it's probably a good time to try to 
+formulas.l:;     temperature, which, since the temperature is low, will make it likely 
+formulas.l:;     temperature will be high.  Since the program has found some structure,
+formulas.l:;     return a distribution slanted towards low temperature, i.e., make
+formulas.l:;     temperatures.
+formulas.l:	 %very-low-answer-temperature-threshold-distribution%)
+formulas.l:	 %low-answer-temperature-threshold-distribution%)
+formulas.l:	 %medium-answer-temperature-threshold-distribution%)
+formulas.l:	 %high-answer-temperature-threshold-distribution%)
+formulas.l:        (t %very-high-answer-temperature-threshold-distribution%)))
+formulas.l:(defun get-temperature-adjusted-probability (prob &aux low-prob-factor
+formulas.l:; a probability (from 0 - 1) based on that value and the temperature.  When
+formulas.l:; the temperature is 0, the result is (/ value 100), but at higher 
+formulas.l:; temperatures, values below 50 get raised and values above 50 get lowered
+formulas.l:; as a function of temperature.
+formulas.l:		       (* (/ (- 10 (sqrt (fake-reciprocal *temperature*))) 
+formulas.l:		           (* (/ (- 10 (sqrt (fake-reciprocal *temperature*))) 
+formulas.l:(defun test-get-temperature-adjusted-probability (prob)
+formulas.l:        (setq *temperature* temp)
+formulas.l:		temp (float (get-temperature-adjusted-probability prob))))
+formulas.l:(defun get-temperature-adjusted-value-list (value-list &aux exponent)  
+formulas.l:; values, with the exponent being a function of the temperature.  The higher
+formulas.l:; the temperature, the bigger the difference between unequal values.
+formulas.l:  (setq exponent (+ (/ (fake-reciprocal *temperature*) 30) .5))
+formulas.l:        (setq *temperature* temp)
+formulas.l:		temp (get-temperature-adjusted-value-list value-list))))
+formulas.l:	 (setq probability (/ (sqr *temperature*) 100)))
+groups.l:	(get-temperature-adjusted-probability (/ proposed-group-strength 100)))
+groups.l:  (get-temperature-adjusted-probability
+groups.l:   else (get-temperature-adjusted-probability 
+initialization.l:  (setq *temperature* 100)
+initialization.l:  (setq *clamp-temperature* nil)
+initialization.l:	(setq %temperature-graphics% nil)
+initialization.l:  (if* %temperature-graphics% 
+initialization.l:   then (display-temperature))
+rule.l:	(get-temperature-adjusted-value-list
+rule.l:	(get-temperature-adjusted-value-list
+rule.l:	(get-temperature-adjusted-probability 
+rule.l:(defun rule-translator (&aux slippage-list answer-temperature-threshold 
+rule.l:  ; If the temperature is too high (a threshold is probabilistically chosen), 
+rule.l:   (setq answer-temperature-threshold 
+rule.l:	 (send (get-answer-temperature-threshold-distribution) :choose))
+rule.l:    then (format t "The answer-temperature-threshold is ~a~&" 
+rule.l:		 answer-temperature-threshold))
+rule.l:   (if* (> *temperature* answer-temperature-threshold)
+run.l:              (setq *clamp-temperature* nil)
+run.l:   then (update-temperature)
+run.l:        (if* %temperature-graphics% then (update-temperature-display))
+run.l:; temperature, and activate and clamp the activation of all the descriptions 
+run.l:  (setq *temperature* 100)
+run.l:  (setq *clamp-temperature* t)
+slipnet-def.l:	when (eq (flip-coin (get-temperature-adjusted-probability
+util.l:	(get-temperature-adjusted-value-list strength-list))
+workspace.l:; This method is used after a snag has been hit and the temperature has
+workspace.l:; been clamped to determine whether or not to release the temperature
+workspace.l:; then there is some chance that the temperature clamp will be released.)
+workspace.l:; (adjusted for temperature) according to the given method.   
+workspace.l:  (nth (select-list-position (get-temperature-adjusted-value-list value-list))
+workspace-strings.l:; (adjusted for temperature) according to the given method.    
+workspace-strings.l:  (nth (select-list-position (get-temperature-adjusted-value-list value-list))
