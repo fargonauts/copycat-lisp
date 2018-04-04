@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+import os, sys
+
+def main(args):
+    accum = 0
+    for filename in os.listdir('.'):
+        if os.path.isfile(filename):
+            with open(filename, 'r') as infile:
+                accum += infile.read().count('\n')
+    print(accum)
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
