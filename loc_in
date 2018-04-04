@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+import os, sys
+
+def main(args):
+    assert len(args) > 0, 'Must have at least one argument'
+    filename = args[0]
+    if os.path.isfile(filename):
+        with open(filename, 'r') as infile:
+            print(infile.read().count('\n'))
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
